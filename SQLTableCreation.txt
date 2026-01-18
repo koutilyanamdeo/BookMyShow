@@ -1,0 +1,35 @@
+-- Theater Table
+CREATE TABLE Theaters (
+    TheaterID INT PRIMARY KEY,
+    TheaterName VARCHAR(100),
+    Location VARCHAR(100)
+);
+
+-- Movie Table
+CREATE TABLE Movies (
+    MovieID INT PRIMARY KEY,
+    Title VARCHAR(100),
+    Language VARCHAR(50),
+    Format VARCHAR(10),
+    Certification VARCHAR(5)
+);
+
+-- Screen Table (Links screens to theaters and tech specs)
+CREATE TABLE Screens (
+    ScreenID INT PRIMARY KEY,
+    TheaterID INT,
+    ScreenName VARCHAR(50),
+    AudioVisualTech VARCHAR(50),
+    FOREIGN KEY (TheaterID) REFERENCES Theaters(TheaterID)
+);
+
+-- Show Table (The bridge linking everything)
+CREATE TABLE Shows (
+    ShowID INT PRIMARY KEY,
+    MovieID INT,
+    ScreenID INT,
+    ShowDate DATE,
+    ShowTime TIME,
+    FOREIGN KEY (MovieID) REFERENCES Movies(MovieID),
+    FOREIGN KEY (ScreenID) REFERENCES Screens(ScreenID)
+);

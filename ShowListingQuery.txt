@@ -1,0 +1,12 @@
+SELECT 
+    m.Title, 
+    m.Language, 
+    s.ShowTime, 
+    sc.AudioVisualTech
+FROM Shows s
+JOIN Movies m ON s.MovieID = m.MovieID
+JOIN Screens sc ON s.ScreenID = sc.ScreenID
+JOIN Theaters t ON sc.TheaterID = t.TheaterID
+WHERE t.TheaterName = 'PVR: Nexus' 
+  AND s.ShowDate = '2025-04-25'
+ORDER BY s.ShowTime ASC;
