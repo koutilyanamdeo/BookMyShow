@@ -1,0 +1,15 @@
+INSERT INTO Theaters VALUES (1, 'PVR: Nexus', 'Forum Mall');
+
+INSERT INTO Movies VALUES 
+(101, 'Dasara', 'Telugu', '2D', 'UA'),
+(102, 'Kisi Ka Bhai Kisi Ki Jaan', 'Hindi', '2D', 'UA'),
+(103, 'Avatar: The Way of Water', 'English', '3D', 'UA');
+
+INSERT INTO Screens VALUES 
+(501, 1, 'Screen 1', '4K Dolby 7.1'),
+(502, 1, 'Playhouse', 'Playhouse 4K');
+
+INSERT INTO Shows VALUES 
+(1, 101, 501, '2025-04-25', '12:15:00'),
+(2, 102, 501, '2025-04-25', '13:00:00'),
+(3, 103, 502, '2025-04-25', '13:20:00');
